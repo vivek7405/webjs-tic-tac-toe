@@ -28,9 +28,13 @@ function statusOf(board: Board): string {
   return turnOf(board) + ' to play';
 }
 
+// The mark is sized with an arbitrary PROPERTY ([font-size:...]) rather than a
+// text-* size utility: cn() treats every text-* class as one group, so a
+// text-size utility and the text-COLOUR utility below would collide and the
+// size would be dropped from the merged string.
 const SQUARE =
   'grid place-items-center min-h-0 overflow-hidden rounded-xl border border-border ' +
-  'text-[clamp(1.5rem,14cqi,4rem)] font-semibold leading-none transition-colors ' +
+  '[font-size:clamp(1.5rem,14cqi,4rem)] font-semibold leading-none transition-colors ' +
   'cursor-pointer disabled:cursor-default';
 
 export class TicTacToeBoard extends WebComponent {

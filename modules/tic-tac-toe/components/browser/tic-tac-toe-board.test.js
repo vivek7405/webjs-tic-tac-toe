@@ -103,6 +103,12 @@ suite('tic-tac-toe-board', () => {
     }
 
     await playAll(el, [0, 4, 8, 1]);
+
+    // The mark scales with the square. A collision in the merged class string
+    // (a dropped font-size) would leave it at the inherited body size.
+    const markSize = parseFloat(getComputedStyle(squares(el)[0]).fontSize);
+    assert(markSize > 24, 'the mark is sized to the square, got: ' + markSize);
+
     const filled = sizes();
     for (let i = 0; i < filled.length; i++) {
       assert(Math.abs(filled[i].width - empty[i].width) < 1, 'square ' + i + ' did not resize');

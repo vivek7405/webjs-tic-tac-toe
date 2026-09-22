@@ -1,0 +1,18 @@
+- main [ref=e2]:
+  - generic [ref=e3]:
+    - generic [ref=e4]:
+      - heading "Tic Tac Toe" [level=1] [ref=e5]
+      - paragraph [ref=e6]: Two players, one board. X opens, three in a row wins.
+    - generic [ref=e8]:
+      - paragraph [ref=e9]: X to play
+      - group "Tic tac toe board" [ref=e10]:
+        - button "Square 1, empty" [ref=e11] [cursor=pointer]
+        - button "Square 2, empty" [ref=e12] [cursor=pointer]
+        - button "Square 3, empty" [ref=e13] [cursor=pointer]
+        - button "Square 4, empty" [ref=e14] [cursor=pointer]
+        - button "Square 5, empty" [ref=e15] [cursor=pointer]
+        - button "Square 6, empty" [ref=e16] [cursor=pointer]
+        - button "Square 7, empty" [ref=e17] [cursor=pointer]
+        - button "Square 8, empty" [ref=e18] [cursor=pointer]
+        - button "Square 9, empty" [ref=e19] [cursor=pointer]
+      - button "New game" [ref=e20] [cursor=pointer]
