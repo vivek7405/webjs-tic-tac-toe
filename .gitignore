@@ -71,3 +71,6 @@ coverage/
 db/dev.db
 db/dev.db-journal
 db/dev.db-*
+
+# playwright-mcp screenshots and snapshots
+.playwright-mcp/
