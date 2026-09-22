@@ -51,12 +51,12 @@ jobs:
       - run: npm ci
       - name: Install Playwright Chromium (browser + e2e layers)
         run: npx playwright install --with-deps chromium
-      # The scaffold's e2e test (test/hello/e2e/) drives a real browser via
-      # puppeteer-core, which is not a default dependency (the test skips when
-      # it is absent). Install it so the e2e layer runs here rather than
-      # skipping silently.
-      - name: Install puppeteer-core
-        run: npm install --no-save puppeteer-core
+      # The scaffold's puppeteer-core install step is gone with the scaffold's
+      # own e2e test. This app's e2e layer drives the server directly, and a
+      # bare `npm install --no-save puppeteer-core` fails with EOVERRIDE
+      # against the puppeteer-core override in package.json anyway. Restore the
+      # step (pinned to that override) only if an e2e test starts driving a
+      # real browser.
       - name: Resolve the Chromium binary path
         run: echo "CHROMIUM_PATH=$(node -e "console.log(require('playwright-core').chromium.executablePath())")" >> "$GITHUB_ENV"
       - name: Set up the database (generate + apply migrations)
