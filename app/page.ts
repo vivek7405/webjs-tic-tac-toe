@@ -1,21 +1,26 @@
 import { html } from '@webjsdev/core';
+// Importing the component registers its tag. The page itself is server-only
+// HTML: all the interactivity lives inside the element.
+import '#modules/tic-tac-toe/components/tic-tac-toe-board.ts';
 
 export const metadata = {
-  title: 'Home',
+  title: 'Tic Tac Toe',
+  description: 'A two-player tic tac toe game. X opens, O follows, three in a row wins.',
 };
 
 export default function Home() {
   return html`
-    <div class="max-w-2xl mx-auto px-6 py-24 flex flex-col items-center text-center gap-6">
-      <h1 class="text-4xl font-bold tracking-tight m-0">Your app</h1>
-      <p class="text-base leading-relaxed m-0 opacity-70">
-        The gallery is cleared. This is <code class="text-[0.9em]">app/page.ts</code>. Build your
-        app from here. The guide is <code class="text-[0.9em]">.agents/skills/webjs/SKILL.md</code>.
-      </p>
-      <nav class="flex items-center gap-5 text-sm opacity-70">
-        <a href="https://webjs.dev/docs" target="_blank" rel="noopener" class="hover:opacity-100 transition-opacity no-underline">Docs</a>
-        <a href="https://github.com/webjsdev/webjs" target="_blank" rel="noopener" class="hover:opacity-100 transition-opacity no-underline">GitHub</a>
-      </nav>
+    <div class="flex flex-col items-center gap-8">
+      <header class="flex flex-col items-center gap-2 text-center">
+        <h1 class="m-0 text-3xl font-bold tracking-tight">Tic Tac Toe</h1>
+        <p class="m-0 text-sm text-muted-foreground">
+          Two players, one board. X opens, three in a row wins.
+        </p>
+      </header>
+
+      <!-- Size the HOST, not only an inner wrapper: the custom element is the
+           box this centering column lays out. -->
+      <tic-tac-toe-board class="w-full max-w-[420px]"></tic-tac-toe-board>
     </div>
   `;
 }
