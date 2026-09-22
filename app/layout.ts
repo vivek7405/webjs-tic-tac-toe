@@ -62,7 +62,7 @@ export default function RootLayout({ children }: LayoutProps) {
         --primary-tint: color-mix(in srgb, var(--primary) 22%, transparent);
       }
       /* Present for a future manual switch; with neither attribute set the
-         `color-scheme: light dark` above follows the OS. */
+         color-scheme declared above follows the OS. */
       :root[data-theme='light'] { color-scheme: light; }
       :root[data-theme='dark']  { color-scheme: dark; }
     </style>
