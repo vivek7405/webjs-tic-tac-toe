@@ -4,6 +4,8 @@ A very small two-player tic tac toe game, built with [WebJs](https://webjs.dev):
 buildless native ES modules, server-rendered HTML, and one interactive web
 component.
 
+Live at [tic-tac-toe.pilotrun.app](https://tic-tac-toe.pilotrun.app).
+
 X opens, the marks alternate, three in a row wins, and a full board with no
 line is a draw. The winning line is highlighted, the board freezes once the
 game is decided, and **New game** clears it.
